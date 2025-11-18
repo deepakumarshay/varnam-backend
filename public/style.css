@@ -1,0 +1,47 @@
+
+*{box-sizing:border-box}
+body,html{margin:0;height:100%;font-family:Arial, sans-serif;color:#fff;background:#0b0b0b;}
+.hero-section{
+  height:50vh;
+  background:url('assets/tajmahal_bg.jpg') center/cover no-repeat;
+  position:relative;
+}
+.site-header{
+  position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;
+  background:rgba(0,0,0,0.45);backdrop-filter:blur(6px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.nav-left{display:flex;align-items:center;gap:16px}
+.logo-img{height:50px}
+.main-nav .nav-link{color:#ffd28c;text-decoration:none;margin-right:10px;font-weight:600}
+.search-bar{display:flex;align-items:center;margin-right:12px}
+.search-bar input{padding:8px;border-radius:20px 0 0 20px;border:none;width:220px;outline:none}
+.search-bar button{padding:8px;border-radius:0 20px 20px 0;border:none;background:#ffa733;color:#000;cursor:pointer}
+#cartBtn{background:#ffd28c;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;color:#000;font-weight:600}
+
+/* product section glass */
+.product-section{margin:120px auto;padding:24px;width:90%;max-width:1200px;background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);border-radius:16px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+
+/* product card */
+.product-card{background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;transition:transform .18s}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.product-card img{width:100%;border-radius:8px;height:160px;object-fit:cover}
+.product-card h3{margin:10px 0 6px;color:#fff}
+.product-card p{color:#ffd28c;font-weight:600;margin:0}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.add-btn{background:#ff7a00;color:#fff;border:none;padding:8px 12px;border-radius:8px}
+
+/* cart sidebar */
+.cart-sidebar{position:fixed;top:70px;right:20px;width:320px;background:rgba(0,0,0,0.8);padding:16px;border-radius:12px;z-index:1100;color:#fff}
+.hidden{display:none}
+.cart-item{display:flex;gap:10px;margin-bottom:10px}
+.cart-item img{width:60px;height:60px;object-fit:cover;border-radius:6px}
+.cart-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+/* responsive */
+@media (max-width:700px){
+  .search-bar input{width:120px}
+  .hero-section{height:40vh}
+  .product-card img{height:140px}
+  .nav-left{gap:8px}
+}

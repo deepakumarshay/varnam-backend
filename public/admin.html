@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Varnam</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>body{font-family:Arial;padding:20px;background:#111;color:#fff} form{max-width:600px} input,textarea{width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #333;background:#222;color:#fff}</style>
+</head>
+<body>
+  <h1>Admin - Add Product</h1>
+  <form id="productForm">
+    <input name="title" placeholder="Title" required />
+    <textarea name="description" placeholder="Description"></textarea>
+    <input name="price" type="number" placeholder="Price" required />
+    <input name="category" placeholder="Category" />
+    <input name="image" type="file" accept="image/*" />
+    <button type="submit">Create Product</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('productForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const res = await fetch('/api/admin/product', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (data.success) alert('Product created');
+      else alert('Error: ' + (data.error || 'unknown'));
+    });
+  </script>
+</body>
+</html>
